@@ -1,0 +1,313 @@
+1. package section (optional)  Note : package -> collection of classes
+2. import section (import predefined packages - optional)
+3. class definition
+
+class MyClass 
+{
+     //main method
+     public static void main(String[] args)
+     {
+         System.out.println("Hello World");  
+     }
+}
+
+command to compile - javac filename.java
+
+command to execute - java classname
+
+primitive data types in java
+----------------------------
+boolean -> 1bit (%b)
+  Range: true, false 
+byte --> 8 bit signed integer (%d)
+  Range: -2^7 to 2^7-1
+char --> 16 bit (%c)
+  Range: ASCII 0 to 255
+short --> 16 bit signed integer (%d)
+  Range: -2^15 to 2^15-1
+int --> 32 bit signed integer (%d)
+  Range: -2^31 to 2^31-1
+long --> 64 bit signed integer (%d)
+  Range: -2^63 to 2^63-1
+float --> 32 bit (%f)
+  Range: stores 6 to 7 decimal values
+double --> 64 bit (%f)
+  Range: stores 15 decimal values
+
+Identifiers
+-----------
+Rules:
+
+1.Should not start with a digit, it can start with an alphabet
+2.No other special character is allowed except underscore(_), a dollar sign($)
+3.No whitespaces. (First Name --> Invalid, firstName --> valid)
+4.Keywords should not be used again
+5.firstname, FIRSTNAME are 2 vaiables
+
+An Identifier is a name given to
+1.A variable
+2.A function (method)
+3.A class
+
+
+-> A package is a collection of classes ( built-in classes)
+-> To take input from the user we require a built-in class -> "Scanner" which is present in the package
+   util. Inorder to use Scanner class we should import util
+   syntax to import util : import java.util.Scanner 
+   syntax to take input  : Scanner obj = new Scanner(System.in);
+-> Scanner contains some methods that can be used to read input from the console
+-> nextInt() -> Used to read integers
+   nextFloat() -> Used to read float values
+   nextDouble() -> Used to read double values
+   next() -> To read a string without spaces
+   next().charAt() -> Read characters
+   nextLine() -> To read a string with spaces
+
+-> default package which is always imported by default is java.lang
+   it contains : String, Math, Integer, Float
+
+Operators:
+---------
+
+An operator is a symbol which tells a compiler to perform certain operations.
+
+-> Arithematic operators (+, - , *, /, %)
+
+-> Logical operators (&&, ||, !)
+
+-> Relational operators (<, >, <=, >=, ==, !=)
+
+-> Conditional operators (also called as Ternary operators) 
+   -> syntax : exp1 ? exp2 : exp3;
+
+-> Assignment operators (+=, -=, *=, /=, %=, =)
+
+-> Instanceof opearator
+
+   Ex:
+   class Demo
+   {
+        public static void main(String args[])
+        { 
+            Demo d = new Demo();
+            System.out.println(d instanceof Demo);
+        }
+   }
+
+note : new is an operator which is used to create an object an allocate memory to it in the memory
+       heap
+
+-> new 
+   -> syntax : class_name objname = new classname(); (to create an object)
+
+
+Runnable class:
+--------------
+A class which contains main method
+
+Note: If 100 classes are defined in a java program 100 .class files are created.In those 100 class files  
+      the classes which contain main method will be executed. From all the classes which contains main method
+      the one which is run by us will be executed.
+
+Format Specifiers
+-----------------
+
+%[flag][width][.precision]conversion_character
+
+Ex:
+
+int a = 11
+System.out.printf("%010d",a);
+
+output:
+
+0000000011
+
+Methods in Math
+---------------
+
+1.sqrt()
+2.ceil()
+3.min()
+4.max()
+5.ternary()
+
+Ternary operator
+----------------
+
+syntax:
+
+condition ? true statement : false statement ;
+
+Conditional statements
+---------------------
+
+if
+if else
+nested if
+if elif else
+switch
+
+
+3 different types of variables
+------------------------------
+
+we can create variables
+
+1. local variables:
+
+-> inside a class also inside a amethod
+-> with in the block / method scope
+
+2. instance variables (non - static) :
+
+-> If you need to create an instance to access class members then they are non-static or instance
+-> inside the class outside the method without statickeyword
+-> belong to instances of that class
+
+scope:
+-> inside the same class
+-> outside the class with an instance
+
+3. static / class variables:
+
+-> If you are able to access class member directly by using class name that means those members are static
+-> inside a class outside a method with static Keyword
+
+scope:
+
+-> inside the class
+-> outside the class with the classname directly
+
+Note : Static members can also be accessed using object
+
+
+Creation of Arrays: 2 ways
+
+1.Java style
+  Syntax : datatype[] array_name = new datatype[size];
+  Ex : int[] arr = new int[10];
+       double[] doubleArr = new double[5];
+       char[] name = new char[20];
+
+2.  C style
+  syntax : datatype array_name[] = new datatype[size];
+  Ex : int arr[] = new int[10];
+
+Arrays : It is a class (belongs to utility package) which contains the below methods
+
+Arrays.toString(arr) -> to print the elements of arr in the form of a list
+  Arrays.sort(arr) -> to sort the elements in the array (sorts in place which means the array itself is sorted)
+  Arrays.sort(arr, 3, 6) -> sorts elements at indexes 3, 4, 5
+  
+
+Default values of data types :
+
+Data type                         Default values
+
+int                                     0 
+short                                   0 
+byte                                    0
+long                                    0L
+float                                  0.0f
+double                                 0.0
+char                                  null char 
+boolean                                false  
+String                                 null          
+
+Ascii of space ' ' is 32
+
+
+Strings -> Immutable
+
+Mutable strings:
+
+StringBuffer & StringBuilder
+StringBuffer -> Thread Safe
+StringBuilder -> Thread Un - Safe
+Mutable String Object
+
+
+
+Access Modifiers:
+
+
+                                              public    package-private  private    protected
+within the same class                           Yes          Yes           Yes         Yes
+within other classes in same package            Yes          Yes           No          Yes
+within other child classes in other package     Yes          No            No          Yes
+within other classes in other package           Yes          No            No          No
+
+Wrapper class
+
+primitive data types                               wrapper class
+    int                                                 Integer
+    char                                               character
+    float                                                Float
+    double                                              Double
+    boolean                                             Boolean
+    byte                                                 Byte
+    short                                                Short
+
+
+    Generic Methods:
+
+
+
+Auto Boxing:
+  Automatic conversion that java compiler does between a primitive type and it's wrapper
+  class
+    
+Auto Unboxing:
+   Automatic conversion that java compiler does between a wrapper class object and it's primitive
+   type
+
+------------------------------------------------------------------------------------------------
+
+Abstraction in Java:
+
+Abstraction is nothing but hiding some details and showing only the details that are 
+necessary.
+
+1.Abstract class
+  i. An Abstract method is method without body
+  ii. Abstract methods can be created by adding a keyword 'abstract' in front of the method
+  iii. If a class contains atleast one abstract method then you have to make the class also
+      as abstract.
+  iv. You cannot create instances for an abstract class.
+  v. Abstract classes can also contain concrete methods (Methods with body)
+    Note : oppostite of abstract is concrete
+  vi. The major use is abstract classes can be used in inheritance.A class which inherits from an
+      abstract class should provide the implementation of the abstract methods.
+  vii. If a child class fails to provide implementation for all the abstract methods in parent 
+        class, the child class should also be made as abstract
+----------------------------------------------------------------------------------------------
+
+Interfaces:
+
+1.You can achieve 100 % abstraction, using interfaces.
+2.Java doesn't support Multiple - Inheritance using classes.
+3.Interfaces support multiple - inheritance.
+4.Interfaces contains only abstract methods.
+5.You need to write only te declaration of the method in the interfaces.
+6.Classes can implement interfaces using 'implements' keyword.
+7.the class that implements an interface should povide concrete implementation of the  
+  methods in the interface.
+8.interface MyInterface {
+    methods
+  }
+
+----------------------------------------------------------------------------------------------
+_________________________________________________________________________
+|      |                    Package                 |                    |
+-------------------------------------------------------------------------
+| S.No | java.awt  | javax.showing |  java.awt.event|   Category  | Use  |
+|______|___________|_______________|________________|_____________|______|      
+  1        Font                                         class
+  2                     JFrame                          class 
+                        JLabel                          class
+                        Jbutton                         class
+                        JTextField                      class
+                        JOptionPane                     class
+                                      ActionEvent       class   
+                                      ActionListener    interface
